@@ -42,21 +42,21 @@
 // // document.body.innerHTML += '<p>Hruba mzda za mesec je: ' + total + ' Kč </p>';
 
 
-// //---------------------Lekce 6 Podmínky--------------------------------------------------------
+//---------------------Lekce 5 Podmínky--------------------------------------------------------
 
-// //----------------------Přihlášení-------------------------------------
-// // const jmeno = String(prompt('Zadejte Vaše  uživatelské jméno:'));
-// // if (jmeno === 'krakonos') {
-// //     alert('uživatelské jméno je správně');
-// //     const password = String(prompt('Zadejte Vaše heslo'));
-// //     if( password === 'sojka'){
-// //         alert ('zadál jste správné heslo')
-// //     } else {
-// //         alert('zadál jste špatné heslo')
-// //     }
-// // } else {
-// //     alert ('jméno je nesprávné');
-// // }
+//----------------------Přihlášení-------------------------------------
+// const jmeno = String(prompt('Zadejte Vaše  uživatelské jméno:'));
+// if (jmeno === 'krakonos') {
+//     alert('uživatelské jméno je správně');
+//     const password = String(prompt('Zadejte Vaše heslo'));
+//     if( password === 'sojka'){
+//         alert ('zadál jste správné heslo')
+//     } else {
+//         alert('zadál jste špatné heslo')
+//     }
+// } else {
+//     alert ('jméno je nesprávné');
+// }
 
 // //-------------------------Cena vstupenky-----------------
 // // const vek = Number(prompt('Zadejte Vaš věk:'));
@@ -150,19 +150,19 @@
 
 
 // //------------------------------------------------Pole v divadle--------------------------------
-// // Pole celých čísel (počty diváků na představeních)
-// const pocetDivaku = [150, 200, 180, 250, 220];
+// // // Pole celých čísel (počty diváků na představeních)
+//  const pocetDivaku = [150, 200, 180, 250, 220];
 
-// // Pole desetinných čísel (zaplněnost divadla v procentech)
+// // // Pole desetinných čísel (zaplněnost divadla v procentech)
 // const zaplnenostDivadla = [0.75, 0.85, 0.80, 0.90, 0.88];
 
-// // Pole řetězců (seznam názvů divadelních představení)
+// // // Pole řetězců (seznam názvů divadelních představení)
 // const hry = ["Hamlet", "Romeo a Julie", "Othello", "Macbeth", "Královna Mab"];
 
-// // Uložení druhé položky ze seznamu do proměnné
+// // // Uložení druhé položky ze seznamu do proměnné
 // const druhaHra = hry[1];
 
-// // Pole objektů (hry a jejich hodnocení)
+// // // Pole objektů (hry a jejich hodnocení)
 // const hodnoceniHer = [
 //     { nazev: "Hamlet", casopis: "Divadelní recenze", hodnoceni: 9 },
 //     { nazev: "Romeo a Julie", casopis: "Umělecký svět", hodnoceni: 8.5 },
@@ -176,18 +176,16 @@
 // //---------------------------------- Lekce 7 Cykly-------------------------------------
 
 // //-------------------------------------------Seznam hodnocení-----------------------------
-// const hodnoceni = [7, 9, 6, 7, 9, 8];
+//  const hodnoceni = [7, 9, 6, 7, 9, 8];
 
-// // Projde seznam a vypíše každé hodnocení na nový řádek
-// for (let i = 0; i < hodnoceni.length; i++) {
-//     document.body.innerHTML += hodnoceni[i] + '<br>';
+//  for (const h of hodnoceni) {
+//     document.body.innerHTML += h + '<br>';
+//  }
+
+
+// for (const h of hodnoceni) {
+//     document.body.innerHTML += h + '/10 <br>';
 // }
-
-// // Upraví výstup v požadovaném formátu
-// for (let i = 0; i < hodnoceni.length; i++) {
-//     document.body.innerHTML += hodnoceni[i] + "/10 <br>";
-// }
-
 
 // //---------------------Výdaje---------------------------------
 
@@ -207,11 +205,13 @@
 //     { jmeno: 'Ondra', zbozi: 'Toaleťák', utrata: 6 },
 // ];
 
-// // Všechna jména
-// const vsechnaJmenaElement = document.getElementById('vsechnaJmena');
-// for (let i = 0; i < vydaje.length; i++) {
-//     //document.body.innerHTML += vydaje[i].jmeno + '<br>';
-//     if (vydaje[i].jmeno === 'Petr') {
-//         document.body.innerHTML += vydaje[i].jmeno + '<br>';
-//     }
+//  for (const jmeno of vydaje){
+//      document.body.innerHTML += jmeno.jmeno + '<br>';
+//  };
+// for (const petr of vydaje){
+//      if (petr.jmeno === 'Petr') {
+//         //document.body.innerHTML += petr + '<br>';
+//         document.body.innerHTML += JSON.stringify(petr) + '<br>'; // převede objekt petr na řetězec formátu JSON. (JavaScript Object Notation)
+//         document.body.innerHTML += `Jméno: ${petr.jmeno}, Zboží: ${petr.zbozi}, Útrata: ${petr.utrata}<br>`; // Řetězec šablony
+//      }
 // }
